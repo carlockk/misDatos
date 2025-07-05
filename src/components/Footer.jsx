@@ -20,7 +20,7 @@ export default function Footer() {
               📧 Email
             </Typography>
             <Typography variant="body2" align="center">
-              carlos@example.com
+              carlos.virtualdesk@gmail.com
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>

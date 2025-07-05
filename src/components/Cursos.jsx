@@ -12,30 +12,38 @@ import { motion } from 'framer-motion';
 export default function Cursos() {
   return (
     <Box my={6}>
-      <Box sx={{ textAlign: "center", mb: 2 }}>
-  <Typography
-    variant="h5"
+      <Box
     sx={{
-      display: "inline-block",
-      position: "relative",
-      color: "text.secondary", // gris elegante         // más fino
-      textTransform: "uppercase",
-      fontSize: "0.9rem",
-      mb: 1,
-      "::after": {
-        content: '""',
-        position: "absolute",
-        width: "100%",
-        height: "2px",
-        backgroundColor: "primary.main",
-        bottom: -4,
-        left: 0,
-      },
+      width: '100%',
+      borderBottom: 1,
+      borderColor: 'divider',
+      display: 'flex',
     }}
   >
-    Cursos realizados
-  </Typography>
-</Box>
+    <Typography
+      variant="h6"
+      sx={{
+        display: 'inline-block',
+        position: 'relative',
+        color: 'text.secondary',
+        textTransform: 'uppercase',
+        fontSize: '0.9rem',
+        px: 3,
+        pb: 1,
+        '::after': {
+          content: '""',
+          position: 'absolute',
+          width: '100%',
+          height: '2px',
+          backgroundColor: 'primary.main',
+          bottom: 0,
+          left: 0,
+        },
+      }}
+    >
+      Cursos realizados
+    </Typography>
+  </Box>
 
 
       <motion.div
@@ -57,21 +65,19 @@ export default function Cursos() {
         >
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <SchoolIcon sx={{ mr: 1 }} /> Curso de Desarrollo Full Stack
+              <SchoolIcon sx={{ mr: 1 }} /> Desarrollo Full Stack
             </AccordionSummary>
             <AccordionDetails>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              euismod, nisi vel consectetur placerat, nisl nunc bibendum sapien.
+              Bootcamp especializado en React, NodeJs y JavaScript 
             </AccordionDetails>
           </Accordion>
 
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <SchoolIcon sx={{ mr: 1 }} /> Curso de React y Frontend Moderno
+              <SchoolIcon sx={{ mr: 1 }} /> Linux Centos
             </AccordionSummary>
             <AccordionDetails>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              fermentum sem in tortor hendrerit, vitae ultricies lorem eleifend.
+              Certificación Linux Redhat, especializada en administración de servidores
             </AccordionDetails>
           </Accordion>
         </Box>

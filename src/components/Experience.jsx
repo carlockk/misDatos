@@ -37,9 +37,39 @@ export default function Experience() {
 
   return (
     <>
-      <Typography variant="h5" gutterBottom>
+     <Box my={6}>
+  {/* Línea completa de separación con "pestaña" alineada a la izquierda */}
+  <Box
+    sx={{
+      width: '100%',
+      borderBottom: 1,
+      borderColor: 'divider',
+      display: 'flex', // importante para que la pestaña se alinee
+    }}
+  >
+    <Box
+      sx={{
+        borderBottom: 3,
+        borderColor: 'primary.main',
+        px: 3,
+        pb: 1,
+      }}
+    >
+      <Typography
+        variant="h6"
+        sx={{
+          textTransform: 'uppercase',
+          fontSize: '0.9rem',
+          color: 'text.secondary',
+        }}
+      >
         Experiencia Laboral
       </Typography>
+    </Box>
+  </Box>
+</Box>
+
+
 
       <motion.div
         variants={containerVariants}

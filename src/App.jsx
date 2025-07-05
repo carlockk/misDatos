@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import {
   CssBaseline,
   Container,
@@ -21,12 +21,27 @@ import Footer from './components/Footer';
 import { motion } from 'framer-motion';
 import Cursos from './components/Cursos';
 
-
 export default function App() {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState(() => {
+  return localStorage.getItem('preferredTheme') === 'dark' ? 'dark' : 'light';
+});
+
+
+  // Cargar modo guardado desde localStorage
+  useEffect(() => {
+    const savedMode = localStorage.getItem('preferredTheme');
+    if (savedMode === 'dark' || savedMode === 'light') {
+      setMode(savedMode);
+    }
+  }, []);
+
+  // Guardar cuando cambie
+  useEffect(() => {
+    localStorage.setItem('preferredTheme', mode);
+  }, [mode]);
+
   const theme = useMemo(() => getTheme(mode), [mode]);
 
-  // Separador full width reutilizable
   const FullDivider = () => (
     <Box
       sx={{
@@ -46,7 +61,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
-      {/* Modo oscuro/claro */}
+      {/* Botón de modo oscuro/claro */}
       <Box sx={{ position: 'fixed', top: 10, right: 20, zIndex: 1000 }}>
         <IconButton
           onClick={() => setMode((m) => (m === 'light' ? 'dark' : 'light'))}
@@ -78,6 +93,8 @@ export default function App() {
               mx: 'auto',
               mb: 2,
               boxShadow: 3,
+              border: (theme) => `3px solid ${theme.palette.primary.main}`,
+              borderRadius: '50%',
             }}
           />
           <Typography
@@ -98,7 +115,7 @@ export default function App() {
           </Typography>
         </motion.div>
 
-        {/* Sección con pestañas */}
+        {/* Secciones */}
         <FullDivider />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -109,7 +126,6 @@ export default function App() {
           <AboutTabs />
         </motion.div>
 
-        {/* Experiencia */}
         <FullDivider />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -120,7 +136,6 @@ export default function App() {
           <Experience />
         </motion.div>
 
-        {/* Skills */}
         <FullDivider />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -131,17 +146,15 @@ export default function App() {
           <Skills />
         </motion.div>
 
-<FullDivider />
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.2 }}
-  viewport={{ once: true }}
->
-  <Cursos />
-</motion.div>
-
-
+        <FullDivider />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <Cursos />
+        </motion.div>
       </Container>
 
       <Footer />
