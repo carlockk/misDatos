@@ -1,7 +1,7 @@
 import { Chip, Box, Typography, Stack } from "@mui/material";
 
 const skills = [
-  "React", "Next.js", "JavaScript", "Node.js", "Express",
+  "React", "Next.js", "JavaScript", "Tailwind CSS", "Node.js", "Express",
   "PHP", "MySQL", "HTML", "CSS", "Linux (RedHat, CentOS)"
 ];
 
