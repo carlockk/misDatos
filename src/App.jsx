@@ -5,29 +5,24 @@ import {
   Avatar,
   Typography,
   Divider,
-  IconButton,
   Box,
 } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
 import getTheme from './theme';
 
 import AboutTabs from './components/AboutTabs';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
-
-import { motion } from 'framer-motion';
 import Cursos from './components/Cursos';
+import TopBar from './components/TopBar';
+import { motion } from 'framer-motion';
 
 export default function App() {
-  const [mode, setMode] = useState(() => {
-  return localStorage.getItem('preferredTheme') === 'dark' ? 'dark' : 'light';
-});
+  const [mode, setMode] = useState(() =>
+    localStorage.getItem('preferredTheme') === 'dark' ? 'dark' : 'light'
+  );
 
-
-  // Cargar modo guardado desde localStorage
   useEffect(() => {
     const savedMode = localStorage.getItem('preferredTheme');
     if (savedMode === 'dark' || savedMode === 'light') {
@@ -35,7 +30,6 @@ export default function App() {
     }
   }, []);
 
-  // Guardar cuando cambie
   useEffect(() => {
     localStorage.setItem('preferredTheme', mode);
   }, [mode]);
@@ -61,19 +55,13 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
-      {/* Botón de modo oscuro/claro */}
-      <Box sx={{ position: 'fixed', top: 10, right: 20, zIndex: 1000 }}>
-        <IconButton
-          onClick={() => setMode((m) => (m === 'light' ? 'dark' : 'light'))}
-        >
-          {mode === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
-        </IconButton>
-      </Box>
+      {/* Barra superior estilo mac con botón de modo */}
+      <TopBar mode={mode} toggleMode={() => setMode(m => m === 'light' ? 'dark' : 'light')} isLoggedIn={false} userName="Carlos" />
 
       <Container
         maxWidth="md"
         sx={{
-          mt: 12,
+          mt: 10,
           fontFamily: '"Inter", "Roboto", sans-serif',
           color: theme.palette.text.primary,
         }}
@@ -115,44 +103,21 @@ export default function App() {
           </Typography>
         </motion.div>
 
-        {/* Secciones */}
         <FullDivider />
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
           <AboutTabs />
         </motion.div>
 
-        <FullDivider />
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
-        >
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} viewport={{ once: true }}>
           <Experience />
         </motion.div>
 
-        <FullDivider />
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          viewport={{ once: true }}
-        >
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} viewport={{ once: true }}>
           <Skills />
         </motion.div>
 
         <FullDivider />
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} viewport={{ once: true }}>
           <Cursos />
         </motion.div>
       </Container>
