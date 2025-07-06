@@ -2,7 +2,6 @@ import { useState, useMemo, useEffect } from 'react';
 import {
   CssBaseline,
   Container,
-  Avatar,
   Typography,
   Divider,
   Box,
@@ -17,6 +16,7 @@ import Footer from './components/Footer';
 import Cursos from './components/Cursos';
 import TopBar from './components/TopBar';
 import { motion } from 'framer-motion';
+import { AnimatedTooltip } from './components/AnimatedTooltip';
 
 export default function App() {
   const [mode, setMode] = useState(() =>
@@ -51,12 +51,19 @@ export default function App() {
     </Box>
   );
 
+  const [isHovering, setIsHovering] = useState(false);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
       {/* Barra superior estilo mac con botón de modo */}
-      <TopBar mode={mode} toggleMode={() => setMode(m => m === 'light' ? 'dark' : 'light')} isLoggedIn={false} userName="Carlos" />
+      <TopBar
+        mode={mode}
+        toggleMode={() => setMode((m) => (m === 'light' ? 'dark' : 'light'))}
+        isLoggedIn={false}
+        userName="Carlos"
+      />
 
       <Container
         maxWidth="md"
@@ -72,52 +79,73 @@ export default function App() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Avatar
-            alt="Carlos Enrique Castillo"
-            src="https://media.licdn.com/dms/image/v2/D4E03AQHZ8zuEQLzmyA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1714238837187?e=1756944000&v=beta&t=V7A9qCqg1jjK-rD-36xX-FhByUlYmLXK3A2Ji3nDWik"
-            sx={{
-              width: 120,
-              height: 120,
-              mx: 'auto',
-              mb: 2,
-              boxShadow: 3,
-              border: (theme) => `3px solid ${theme.palette.primary.main}`,
-              borderRadius: '50%',
-            }}
+          <AnimatedTooltip
+            image="https://media.licdn.com/dms/image/v2/D4E03AQHZ8zuEQLzmyA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1714238837187?e=1756944000&v=beta&t=V7A9qCqg1jjK-rD-36xX-FhByUlYmLXK3A2Ji3nDWik"
+            name="Carlos Enrique Castillo García"
+            subtitle="Desarrollador full stack"
+            subtitle2="46 años"
+            onHoverChange={(hovering) => setIsHovering(hovering)}
           />
-          <Typography
-            variant="h4"
-            align="center"
-            sx={{ fontWeight: 500, fontSize: '2rem' }}
-          >
-            Carlos Enrique Castillo García
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            color="text.secondary"
-            sx={{ fontSize: '0.95rem' }}
-            gutterBottom
-          >
-            Desarrollador Full Stack
-          </Typography>
+
+          {!isHovering && (
+            <>
+              <Typography
+                variant="h4"
+                align="center"
+                sx={{ fontWeight: 500, fontSize: '2rem' }}
+              >
+                Carlos Enrique Castillo García
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                align="center"
+                color="text.secondary"
+                sx={{ fontSize: '0.95rem' }}
+                gutterBottom
+              >
+                Desarrollador Full Stack
+              </Typography>
+            </>
+          )}
         </motion.div>
 
         <FullDivider />
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <AboutTabs />
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} viewport={{ once: true }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
           <Experience />
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} viewport={{ once: true }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          viewport={{ once: true }}
+        >
           <Skills />
         </motion.div>
 
         <FullDivider />
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} viewport={{ once: true }}>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <Cursos />
         </motion.div>
       </Container>
