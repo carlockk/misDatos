@@ -147,9 +147,6 @@ export default function AboutTabs() {
         <Fade in={tab === 1} timeout={400} unmountOnExit>
           <Box hidden={tab !== 1}>
             <Typography>👤 Nombre: Carlos Enrique Castillo</Typography>
-            <Typography>📅 Fecha de nacimiento: 26 julio 1979</Typography>
-            <Typography>🇨🇱 Nacionalidad: Chileno</Typography>
-            <Typography>📍 Dirección: Quilín Sur 2521A, Macul</Typography>
             <Typography>📱 Teléfono: +56 9 5601 5863</Typography>
             <Typography>✉️ Email: carlos.virtualdesk@gmail.com</Typography>
           </Box>
