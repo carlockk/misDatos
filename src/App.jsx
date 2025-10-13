@@ -80,7 +80,7 @@ export default function App() {
           transition={{ duration: 0.6 }}
         >
           <AnimatedTooltip
-            image="https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png"
+            image="https://coffeewaffles.cl/yo.jpg"
             name="Carlos Enrique Castillo García"
             subtitle="Desarrollador full stack"
             onHoverChange={(hovering) => setIsHovering(hovering)}
