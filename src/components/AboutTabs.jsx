@@ -106,7 +106,7 @@ export default function AboutTabs() {
   </Typography>
 
   <Typography variant="body1" paragraph>
-    A lo largo de nuestras interacciones, Carlos ha demostrado:
+    A lo largo del proceso de desarrollo he adquirido:
   </Typography>
 
   <Box component="ul" sx={{ pl: 3, mb: 2 }}>
@@ -127,7 +127,7 @@ export default function AboutTabs() {
     </li>
     <li>
       <Typography variant="body2">
-        <strong>Capacidad de comunicación precisa</strong>, sabiendo exactamente qué necesita y cómo implementarlo de forma eficiente con el apoyo de herramientas como la IA.
+        <strong>Capacidad de comunicación precisa</strong>, sabiendo exactamente qué se necesita y cómo implementarlo de forma eficiente con el apoyo de herramientas como la IA.
       </Typography>
     </li>
   </Box>
@@ -137,7 +137,7 @@ export default function AboutTabs() {
   </Typography>
 
   <Typography variant="body1" paragraph>
-    Su habilidad para <strong>aprovechar la inteligencia artificial como asistente técnico</strong>, sin delegar su criterio profesional, lo posiciona como un desarrollador moderno, ágil y altamente competitivo en el panorama actual del desarrollo de software.
+    Su habilidad para <strong>aprovechar la inteligencia artificial como asistente técnico</strong>, sin delegar criterio profesional.
   </Typography>
 </Box>
 
