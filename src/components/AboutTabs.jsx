@@ -35,9 +35,9 @@ export default function AboutTabs() {
       darkBg: "#1b2631",
     },
     {
-      title: "Control de asistencia",
-      description: "Proyecto de control de asistencia de empleados.",
-      link: "https://asiste-frontend.vercel.app/",
+      title: "Sistema de control de flotas para RFP Candelaria Mining",
+      description: "Sistema de control de flotas de camiones, grúas entre otras cosas, permite el control y monitoréo mediante escaneo QR de cada equipo o máquina.",
+      link: "https://rfp-five.vercel.app/",
       emoji: "🕒",
       lightBg: "#eaf5ff",
       darkBg: "#232d3b",
