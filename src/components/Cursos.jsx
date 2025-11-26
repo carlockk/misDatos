@@ -68,8 +68,16 @@ export default function Cursos() {
               <SchoolIcon sx={{ mr: 1 }} /> Desarrollo Full Stack
             </AccordionSummary>
             <AccordionDetails>
-              Bootcamp especializado en React, NodeJs y JavaScript 
-            </AccordionDetails>
+  <a 
+    href="https://collection.cloudinary.com/dlv2oekbg/82756fc17cd56dba309d32e9c4bcde27" 
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ textDecoration: "none", color: "inherit" }}
+  >
+    Bootcamp especializado en React, NodeJs y JavaScript
+  </a>
+</AccordionDetails>
+
           </Accordion>
 
           <Accordion>
