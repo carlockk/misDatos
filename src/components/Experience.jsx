@@ -157,24 +157,33 @@ export default function Experience() {
 
         {/* Modal detalle experiencia */}
         <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
-          {active && (
-            <>
-              <DialogTitle>{active.titulo}</DialogTitle>
-              <DialogContent>
-                <Box sx={{ display: "flex", gap: 2, mt: 1 }}>
-                  {active.imagen && (
-                    <img
-                      src={active.imagen}
-                      alt=""
-                      style={{ width: 120, borderRadius: 4 }}
-                    />
-                  )}
-                  <Typography>{active.descripcionCompleta}</Typography>
-                </Box>
-              </DialogContent>
-            </>
-          )}
-        </Dialog>
+  {active && (
+    <>
+      <DialogTitle>{active.titulo}</DialogTitle>
+
+      <DialogContent>
+        <Typography>{active.descripcionCompleta}</Typography>
+
+        {/* Mostrar botón solo si el item tiene link */}
+        {active.link && (
+          <Box sx={{ mt: 3 }}>
+            <Button
+              variant="contained"
+              color="primary"
+              href={active.link}
+              target={active.target || "_blank"}
+              rel="noopener noreferrer"
+              fullWidth
+            >
+              Ir a Virtualdesk
+            </Button>
+          </Box>
+        )}
+      </DialogContent>
+    </>
+  )}
+</Dialog>
+
       </Box>
     </Box>
   );
