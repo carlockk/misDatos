@@ -102,43 +102,44 @@ export default function AboutTabs() {
         <Fade in={tab === 0} timeout={400} unmountOnExit>
          <Box hidden={tab !== 0}>
   <Typography variant="body1" paragraph>
-    Carlos Enrique Castillo es un <strong>programador full stack</strong> con una destacada capacidad para abordar proyectos web y móviles de forma estructurada, clara y efectiva. Su enfoque autodidacta, potenciado por el uso estratégico de inteligencia artificial, le ha permitido desarrollar sistemas robustos, interfaces modernas y soluciones empresariales funcionales sin depender de equipos grandes o estructuras tradicionales.
-  </Typography>
+  Soy Carlos Enrique Castillo, <strong>programador full stack</strong> con más de <strong>15 años de experiencia</strong> en el desarrollo de soluciones web. Inicié mis proyectos en <strong>PHP y MySQL</strong>, y he visto la evolución de los sistemas desde aplicaciones monolíticas hasta plataformas modernas, rápidas y escalables. Esta trayectoria me motivó a actualizarme de manera continua, incorporando tecnologías como <strong>Node.js</strong> y herramientas actuales del ecosistema JavaScript, integrándolas en soluciones reales que aportan valor directo a empresas y usuarios.
+</Typography>
 
-  <Typography variant="body1" paragraph>
-    A lo largo del proceso de desarrollo he adquirido:
-  </Typography>
+<Typography variant="body1" paragraph>
+  A lo largo de mi desarrollo profesional he fortalecido:
+</Typography>
 
-  <Box component="ul" sx={{ pl: 3, mb: 2 }}>
-    <li>
-      <Typography variant="body2">
-        <strong>Alta autonomía técnica</strong>, capaz de implementar funcionalidades completas en PHP, React, Node.js y otras tecnologías modernas.
-      </Typography>
-    </li>
-    <li>
-      <Typography variant="body2">
-        <strong>Mentalidad modular y escalable</strong>, organizando su código con buenas prácticas desde el inicio.
-      </Typography>
-    </li>
-    <li>
-      <Typography variant="body2">
-        <strong>Enfoque práctico</strong>, priorizando soluciones que funcionan y se integran en flujos reales de negocio (como POS, ecommerce, control de mantenimiento, y más).
-      </Typography>
-    </li>
-    <li>
-      <Typography variant="body2">
-        <strong>Capacidad de comunicación precisa</strong>, sabiendo exactamente qué se necesita y cómo implementarlo de forma eficiente con el apoyo de herramientas como la IA.
-      </Typography>
-    </li>
-  </Box>
+<Box component="ul" sx={{ pl: 3, mb: 2 }}>
+  <li>
+    <Typography variant="body2">
+      <strong>Alta autonomía técnica</strong>, capaz de ejecutar un proyecto completo sin depender de grandes equipos, abordando desde backend hasta frontend.
+    </Typography>
+  </li>
+  <li>
+    <Typography variant="body2">
+      <strong>Mentalidad modular y escalable</strong>, organizando sistemas preparados para crecer sin necesidad de reescrituras futuras.
+    </Typography>
+  </li>
+  <li>
+    <Typography variant="body2">
+      <strong>Experiencia práctica en negocios reales</strong>, desarrollando soluciones para mantenimiento, POS, ecommerce, gestión interna, control técnico y otras áreas operativas.
+    </Typography>
+  </li>
+  <li>
+    <Typography variant="body2">
+      <strong>Capacidad de análisis y comunicación clara</strong>, entendiendo exactamente lo que se necesita y proponiendo mejoras funcionales antes de escribir una sola línea de código.
+    </Typography>
+  </li>
+</Box>
 
-  <Typography variant="body1" paragraph>
-    Además, destaca por su <strong>visión clara de producto</strong>, adaptando cada solución al entorno real del cliente o usuario final, cuidando el diseño, la experiencia móvil y los detalles técnicos de rendimiento.
-  </Typography>
+<Typography variant="body1" paragraph>
+  Mi enfoque está en la <strong>visión de producto</strong>: construir sistemas útiles, bien diseñados y coherentes con el entorno real del cliente, cuidando la experiencia móvil, el rendimiento y los detalles técnicos que hacen sostenible una plataforma en el tiempo.
+</Typography>
 
-  <Typography variant="body1" paragraph>
-    Su habilidad para <strong>aprovechar la inteligencia artificial como asistente técnico</strong>, sin delegar criterio profesional.
-  </Typography>
+<Typography variant="body1" paragraph>
+  Además, integro <strong>inteligencia artificial como asistente técnico</strong> para investigación, prototipado y optimización, manteniendo siempre el criterio profesional en la arquitectura, decisiones y desarrollo final.
+</Typography>
+
 </Box>
 
         </Fade>
